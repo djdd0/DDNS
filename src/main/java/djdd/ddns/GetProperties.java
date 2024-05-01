@@ -49,8 +49,10 @@ public class GetProperties {
     }
 
     public static void readProperties() throws IOException {
+        String jarPath = System.getProperty("java.class.path");
+        String propPath = jarPath.substring(0,jarPath.lastIndexOf(File.separator));
         Properties prop = new Properties();
-        Reader in = new InputStreamReader(Files.newInputStream(Paths.get(System.getProperty("user.dir")+"/properties.txt")), StandardCharsets.UTF_8);
+        Reader in = new InputStreamReader(Files.newInputStream(Paths.get(propPath+File.separator+"properties.txt")), StandardCharsets.UTF_8);
         prop.load(in);
         domainName = prop.getProperty("domainName");
         RR = prop.getProperty("RR");
