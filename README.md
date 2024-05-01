@@ -9,7 +9,13 @@
 
 # 参数获取方法
 
-TP-LINK Password获取方法：（参考链接第一步）
+`getIPMethod` 参数可以为`localIPv4`/`localIPv6`/`TPlinkIPv4`。
+
+当获取到的IP地址为IPv4时，`recordType`需为`A`，当获取到的IP地址为IPv6时，`recordType`需为`AAAA`。
+
+`RR`：主机记录
+
+当通过TP-LINK获得IP地址时 Password获取方法：（参考链接第一步）
 https://www.coderbbb.com/articles/70
 
 阿里云AccessKey获取方法：

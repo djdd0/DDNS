@@ -1,8 +1,8 @@
-domainName = yourDomainName
+domainName = yourDomainName.com
 RR = yourRR
-recordType = yourRecordType
+recordType = A
 password = yourPassword
 accessKeyId = yourAccessKeyId
 accessKeySecret = yourAccessKeySecret
 regionId = yourRegionId
-getIPMethod = methodOFGetIP
+getIPMethod = TPlinkIPv4
