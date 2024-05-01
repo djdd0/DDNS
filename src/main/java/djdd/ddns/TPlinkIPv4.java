@@ -11,7 +11,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class getIP {
+public class TPlinkIPv4 {
 
     private static String STOK = null;
 
@@ -22,7 +22,7 @@ public class getIP {
         }
         CloseableHttpClient httpclient = HttpClientBuilder.create().build();
         HttpPost hp = new HttpPost("http://192.168.1.1");
-        StringEntity LoginEntity = new StringEntity("{\"method\":\"do\",\"login\":{\"password\":\"" +getProperties.getPassword() +"\"}}");
+        StringEntity LoginEntity = new StringEntity("{\"method\":\"do\",\"login\":{\"password\":\"" +GetProperties.getPassword() +"\"}}");
         hp.setEntity(LoginEntity);
         try {
             CloseableHttpResponse response = httpclient.execute(hp);
@@ -68,5 +68,4 @@ public class getIP {
     public static void main(String[] args) throws InterruptedException, IOException {
         System.out.println(get());
     }
-
 }

@@ -1,4 +1,8 @@
+domainName = yourDomainName
+RR = yourRR
+recordType = yourRecordType
 password = yourPassword
 accessKeyId = yourAccessKeyId
 accessKeySecret = yourAccessKeySecret
 regionId = yourRegionId
+getIPMethod = methodOFGetIP

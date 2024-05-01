@@ -13,11 +13,11 @@ public class DdnsClient {
     public static com.aliyun.alidns20150109.Client Initialization() throws Exception {
         Config config = new Config();
         // 您的AccessKey ID
-        config.accessKeyId = getProperties.getAccessKeyId();
+        config.accessKeyId = GetProperties.getAccessKeyId();
         // 您的AccessKey Secret
-        config.accessKeySecret = getProperties.getAccessKeySecret();
+        config.accessKeySecret = GetProperties.getAccessKeySecret();
         // 您的可用区ID
-        config.regionId = getProperties.getRegionId();
+        config.regionId = GetProperties.getRegionId();
         return new com.aliyun.alidns20150109.Client(config);
     }
 
@@ -58,11 +58,11 @@ public class DdnsClient {
     }
 
     public static void update() throws Exception {
-        String currentHostIP = getIP.get();//要更新的ip
-        String domainName = "djdd.fun";//主域名
-        String RR = "in1";//主机记录
-        String recordType = "A";//记录类型
-        System.out.println("将"+RR+"."+domainName+"记录更新为："+currentHostIP);
+        String currentHostIP = GetIP.get();//要更新的ip
+        String domainName = GetProperties.getDomainName();//主域名
+        String RR = GetProperties.getRR();//主机记录
+        String recordType = GetProperties.getRecordType();//记录类型
+        System.out.println("将"+RR+"."+domainName+"的"+recordType+"记录更新为："+currentHostIP);
 
         com.aliyun.alidns20150109.Client client = DdnsClient.Initialization();
         DescribeDomainRecordsResponse resp = DdnsClient.DescribeDomainRecords(client, domainName, RR, recordType);
@@ -96,6 +96,7 @@ public class DdnsClient {
     }
 
     public static void main(String[] args_) throws Exception {
+        GetProperties.readProperties();
         while(true) {
             update();
             Thread.sleep(60000);
