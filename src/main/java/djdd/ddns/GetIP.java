@@ -19,6 +19,7 @@ public class GetIP {
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
+        GetProperties.readProperties();
         System.out.println(get());
     }
 }
